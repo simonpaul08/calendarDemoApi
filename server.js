@@ -4,13 +4,14 @@ import dotenv from 'dotenv';
 import cookieParser from "cookie-parser";
 import googleRoutes from './routes/google.js';
 import EventRoutes from './routes/event.js';
+import corsOptions from "./config/corsOptions.js";
 
 dotenv.config();
 const app = express();
 const router = Router();
 
 // middlewares
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 
